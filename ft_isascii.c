@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 17:34:43 by tsimitop          #+#    #+#             */
-/*   Updated: 2023/10/09 15:09:23 by tsimitop         ###   ########.fr       */
+/*   Created: 2023/10/06 18:08:55 by tsimitop          #+#    #+#             */
+/*   Updated: 2023/10/28 13:41:29 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (c >= 0 && c <= 127)
 	{
 		return (1);
 	}
@@ -21,9 +23,3 @@ int	ft_isalpha(int c)
 		return (0);
 	}
 }
-// #include <stdio.h>
-// int main(void)
-// {
-// 	printf("%i: if 1 the character is alphabetic", ft_isalpha('3'));
-// 	return (0);
-// }

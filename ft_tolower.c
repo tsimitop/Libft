@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 18:08:55 by tsimitop          #+#    #+#             */
-/*   Updated: 2023/10/16 17:46:34 by tsimitop         ###   ########.fr       */
+/*   Created: 2023/10/10 17:05:19 by tsimitop          #+#    #+#             */
+/*   Updated: 2023/10/28 13:43:04 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c >= 'A' && c <= 'Z')
 	{
-		return (1);
+		c = c + 32;
 	}
-	else
-	{
-		return (0);
-	}
+	return (c);
 }

@@ -6,12 +6,13 @@
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:25:55 by tsimitop          #+#    #+#             */
-/*   Updated: 2023/10/18 14:28:34 by tsimitop         ###   ########.fr       */
+/*   Updated: 2023/10/29 13:30:32 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// The memmove() function copies len bytes from string src to string dst.
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*dest;
@@ -37,7 +38,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
 // #include <stdio.h>
 
 // int main(void)
@@ -46,16 +46,22 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	// char dst[] ="oldstring";
 // 	// const char src[] = "secondone";
 
-// 	// printf("Before: dest = %p, dest = %s, src = %p, src = %s,\n", dst, dst, src, src);
-// 	// ft_memmove(dst, src, 5);
-// 	// printf("After: dest = %p, dest = %s, src = %p, src = %s,\n", dst, dst, src, src);
+// 	// printf("Before: dest = %p, dest = %s,
+//  src = %p, src = %s,\n", dst, dst, src, src);
+	// ft_memmove(dst, src, 5);
+
+// 	// printf("After: dest = %p, dest = %s, 
+// src = %p, src = %s,\n", dst, dst, src, src);
 
 // 	// null case
 // 	char dst[] ="          ";
 // 	const char src[] = "      ";
 
-// 	printf("Before: dest = %p, dest = %s, src = %p, src = %s,\n", dst, dst, src, src);
+// 	printf("Before: dest = %p, dest = %s, src = %p,
+//  src = %s,\n", dst, dst, src, src);
 // 	ft_memmove(dst, src, 5);
-// 	printf("After: dest = %p, dest = %s, src = %p, src = %s,\n", dst, dst, src, src);
+
+// 	printf("After: dest = %p, dest = %s, src = %p, 
+// src = %s,\n", dst, dst, src, src);
 // 	return (0);
 // }

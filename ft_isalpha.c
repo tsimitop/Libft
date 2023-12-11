@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 17:22:21 by tsimitop          #+#    #+#             */
-/*   Updated: 2023/10/18 17:43:40 by tsimitop         ###   ########.fr       */
+/*   Created: 2023/10/06 17:34:43 by tsimitop          #+#    #+#             */
+/*   Updated: 2023/10/28 13:41:26 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char *ft_strrchr(const char *s, int c)
+int	ft_isalpha(int c)
 {
-	int	i;
-	int	last_occurence;
-
-	i = 0;
-	last_occurence = -1; //not found yet
-	while (s[i] != '\0')
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 	{
-		if (s[i] == (char)c)
-		{
-			last_occurence = i;
-		}
-		i++;
+		return (1);
 	}
-	if ((char)c == '\0')
+	else
 	{
-		return ((char *)&s[i]);
+		return (0);
 	}
-	else if (last_occurence >= 0)
-	{
-		return ((char *)&s[last_occurence]);
-	}
-	return (NULL);
 }
+// #include <stdio.h>
+// int main(void)
+// {
+// 	printf("%i: if 1 the character is alphabetic", ft_isalpha('3'));
+// 	return (0);
+// }

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 18:10:46 by tsimitop          #+#    #+#             */
-/*   Updated: 2023/10/16 17:46:51 by tsimitop         ###   ########.fr       */
+/*   Created: 2023/10/25 18:51:28 by tsimitop          #+#    #+#             */
+/*   Updated: 2023/10/28 13:42:06 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+// Outputs the integer ’n’ to the given file descriptor.
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 32 && c < 127)
+	char	digit;
+
+	if (n == -2147483648)
 	{
-		return (1);
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	else
+	if (n < 0)
 	{
-		return (0);
+		write(fd, "-", 1);
+		n = -n;
 	}
+	if (n / 10 > 0)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	digit = (n % 10) + '0';
+	write(fd, &digit, 1);
 }
-// #include <stdio.h>
-// int main(void)
-// {
-// 	printf("%i: if 1 the character is printable", ft_isprint('\0'));
-// 	return (0);
-// }

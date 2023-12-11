@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 17:05:24 by tsimitop          #+#    #+#             */
-/*   Updated: 2023/10/16 17:47:51 by tsimitop         ###   ########.fr       */
+/*   Created: 2023/10/25 17:46:30 by tsimitop          #+#    #+#             */
+/*   Updated: 2023/10/28 13:41:59 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+// Outputs the character ’c’ to the given file descriptor.
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-	}
-	return (c);
+	write(fd, &c, 1);
 }
+
+/*
+Parameters 			c: The character to output.
+					fd: The file descriptor on which to write.
+Return value 		None
+External functs.	write
+Description 		Outputs the character ’c’ to the given file
+					descriptor.
+*/

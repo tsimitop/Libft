@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 18:03:00 by tsimitop          #+#    #+#             */
-/*   Updated: 2023/10/16 17:46:44 by tsimitop         ###   ########.fr       */
+/*   Created: 2023/10/18 14:31:14 by tsimitop          #+#    #+#             */
+/*   Updated: 2023/11/24 17:04:21 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+// The strchr() function locates the first occurrence of c (converted to a char)
+// in the string pointed to by s.
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= '0' && c <= '9')
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		return (1);
+		if (s[i] == (char)c)
+		{
+			return ((char *)&s[i]);
+		}
+		i++;
 	}
-	else
+	if ((char)c == '\0')
 	{
-		return (0);
+		return ((char *)&s[i]);
 	}
+	return (NULL);
 }
