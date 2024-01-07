@@ -29,6 +29,15 @@ $(NAME) : $(OBJ)
 $(OBJ) : %.o : %.c
 	@gcc -c -Wall -Wextra -Werror $< -o $@
 
+SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
+bonus : $(OBJ_BONUS)
+	@ar rc $(NAME) $(OBJ_BONUS)
+
+
 clean :
 	@rm -f $(OBJ)
 
