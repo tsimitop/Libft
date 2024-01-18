@@ -5,5 +5,8 @@
 // ’next’ must not be freed.
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
